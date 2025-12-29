@@ -1,70 +1,69 @@
-# AI Alignment Analysis: A Data-Driven Study of Model Misalignment
+# AI Alignment Response Analysis
 
-## 🔍 Overview
-This project explores **AI alignment failures** from a data analysis perspective.  
-Using a **synthetically generated dataset of language-model responses**, it aims to identify patterns of misalignment across ethically ambiguous, dual-use, and safety-critical prompts.
+This project explores how large language models respond to alignment-sensitive prompts, with a focus on refusal behaviour, hedging, and safety-related language patterns.
 
-The goal is not to optimise or deploy models, but to **quantitatively analyse where and how alignment failures occur**, using reproducible data analysis methods.
+The aim is not to claim definitive alignment evaluation, but to demonstrate a **transparent, data-driven approach** to analysing model behaviour using reproducible methods.
 
 ---
 
-## 📊 Dataset Creation
-- Prompts are manually designed across **alignment-relevant categories**
-- A single language model is used to generate responses under consistent conditions
-- Only **prompt templates** are version-controlled
-- Model responses are generated locally and excluded from version control
+## Project Motivation
 
-Each response is later annotated for:
-- Alignment violation (binary)
-- Violation type
-- Severity level (1–3)
+As AI systems are increasingly deployed in high-stakes contexts, understanding how models respond to sensitive or potentially harmful prompts is critical.
 
-This mirrors real-world **AI safety evaluation workflows**.
+This project was created to:
+- Explore practical proxies for alignment-related behaviour
+- Demonstrate careful handling of model-generated data
+- Apply data analysis techniques to an AI governance problem
 
 ---
 
-## 🧪 Methodology
-1. Prompt design and categorisation  
-2. Response generation (reproducible, controlled conditions)  
-3. Data cleaning and feature engineering  
-4. Exploratory data analysis (EDA)  
-5. Creation of custom alignment and risk metrics  
-6. Visualisation of misalignment patterns  
+## Repository Structure
+
+data/
+raw/
+prompts.csv # Alignment-related prompts
+processed/ # Generated responses (excluded from version control)
+notebooks/
+01_generate_responses.ipynb
+02_alignment_analysis.ipynb
 
 ---
 
-## 📈 Example Research Questions
-- Which prompt categories produce the highest misalignment rates?
-- Are longer or more detailed responses more likely to violate alignment?
-- Do certain violation types cluster around specific prompt categories?
-- How does violation severity vary across prompt types?
+## Methodology
+
+1. **Prompt Collection**
+   - Prompts are curated to probe safety, refusal, and uncertainty behaviours.
+   - Stored in `data/raw/prompts.csv`.
+
+2. **Response Generation**
+   - Model responses are generated locally using an external API or open-source model.
+   - Raw responses are intentionally excluded from version control.
+
+3. **Analysis**
+   - Simple, interpretable heuristics are used to flag:
+     - Refusal behaviour
+     - Hedging / uncertainty language
+   - Metrics are aggregated to support comparative analysis.
 
 ---
 
-## ⚠️ Ethical Considerations
-- All data is **synthetic** and non-deployable
-- Annotations involve subjective judgement
-- Results should not be used to rank or benchmark real-world models
-- The project focuses on **analysis**, not enforcement or optimisation
+## Limitations
+
+- Alignment is not directly measurable; all metrics are heuristic.
+- Regex-based classifiers are coarse and may produce false positives.
+- Human annotation would be required for stronger claims.
 
 ---
 
-## 🔮 Future Work
-- Compare responses across multiple models
-- Add inter-annotator agreement analysis
-- Perform time-based or prompt-drift analysis
-- Produce policy-oriented risk summaries
+## Future Work
+
+- Human-labelled alignment datasets
+- Comparison across multiple models
+- More sophisticated NLP classifiers
+- Visualisation of behavioural differences
 
 ---
 
-## 🛠 Tools Used
-- Python  
-- Pandas  
-- NumPy  
-- Matplotlib / Seaborn  
-- Jupyter Notebooks  
+## Disclaimer
 
----
-
-## 📄 License
-This project is licensed under the MIT License.
+This project is for research and demonstration purposes only and does not make claims about the safety or alignment of any specific model.
