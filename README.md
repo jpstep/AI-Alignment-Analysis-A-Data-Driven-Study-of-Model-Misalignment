@@ -19,6 +19,7 @@ This project was created to:
 
 ## Repository Structure
 
+```
 data/
 raw/
 prompts.csv # Alignment-related prompts
@@ -26,6 +27,7 @@ processed/ # Generated responses (excluded from version control)
 notebooks/
 01_generate_responses.ipynb
 02_alignment_analysis.ipynb
+```
 
 ---
 
