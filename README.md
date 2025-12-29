@@ -64,6 +64,24 @@ notebooks/
 
 ---
 
+## Results (Summary)
+
+Model responses were analysed using simple, interpretable heuristics to identify alignment-related behaviours.
+
+Publicly reported results are limited to **aggregated metrics only**, including:
+- Refusal rate
+- Hedging / uncertainty rate
+
+Raw model outputs are excluded from version control to avoid publishing potentially unsafe or policy-sensitive content.
+
+Example summary metrics are stored in:
+data/processed/summary_metrics.csv
+
+
+These values act as placeholders and are intended to demonstrate the analysis pipeline rather than report definitive findings.
+
+---
+
 ## Disclaimer
 
 This project is for research and demonstration purposes only and does not make claims about the safety or alignment of any specific model.
